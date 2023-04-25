@@ -57,7 +57,7 @@ namespace Controle_MaskedTextBox
             /*
              * Para decimais:
             */
-            maskedTextBox6_Decimais.Mask = "00.0000"; // O marcador de decial é o "."
+            maskedTextBox6_Decimais.Mask = "00.0000"; // O marcador de decimal é o "."
 
 
             /*
@@ -71,11 +71,12 @@ namespace Controle_MaskedTextBox
              * Para celular:
             */
             maskedTextBox8_Celular.Mask = "(00) \\90000-0000";
-            // "(\\000) \\90000-0000" | obs.: "\\" força o caracter seguinte
+            // "(\\000) \\90000-0000" | obs.: "\\" Força o caracter seguinte
         }
 
         private void button_Verificar_Click(object sender, EventArgs e)
         {
+            // Verifica se todos os elementos MaskedTextBox estão completamente preenchidos
             bool todosPreenchidos = this.Controls.OfType<MaskedTextBox>().All(mtb => mtb.MaskCompleted);
 
             if (todosPreenchidos) MessageBox.Show("Formulário totalmente preenchido");
